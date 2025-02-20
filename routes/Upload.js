@@ -47,6 +47,7 @@ router.post(
   authenticate,
   upload.single("audio"),
   async (req, res) => {
+    console.log("The requtest reached");
     if (!req.file) {
       return res.status(400).json({ error: "No file uploaded" });
     }
