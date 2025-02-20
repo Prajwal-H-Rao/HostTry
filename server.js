@@ -17,6 +17,8 @@ app.use(express.urlencoded({ extended: true }));
 app.use("/auth", authRoutes);
 app.use("/", uploadRoute);
 
+app.get("/", (req, res) => res.send("<h1>Hello World</h1>"));
+
 mongoose
   .connect(process.env.MONGO_URI)
   .then(() => {
